@@ -40,6 +40,9 @@ int main()
 	};
 	Menu current = MAIN_MENU;
 	int option = 0, character = 0, slot = 0, taun_timer=0;
+	char asif_intro[] = {"Anomaly : Electricity. He has exceptional\nneurons that can produce large\namount of electricity. He also\nhas amazing reflexes, agility and\nspeed"};
+	char atif_intro[] = {"Anomaly : Fire Resistance. He is resistant\nto fire. While utilizing this,\nhe can also manipulate the element\nof fire. He can cover both short\nand far range combat"};
+
 
 	SetTargetFPS(30);
 
@@ -255,7 +258,15 @@ int main()
 			case NEW_GAME:
 				DrawText("Character Select :", 200, 100, 100, RED);
 				DrawText(TextFormat("   Asif"), 275, 300, 50, character == 0 ? YELLOW : DARKGRAY);
+				if (character == 0)
+				{
+					DrawText(TextSubtext(asif_intro, 0 ,strlen(asif_intro)), 200, 660, 30, BLUE);
+				}
 				DrawText(TextFormat("   Atif"), 275, 600, 50, character == 1 ? ORANGE : DARKGRAY);
+				if (character == 1)
+				{
+					DrawText(TextSubtext(atif_intro, 0, strlen(atif_intro)), 200, 660, 30, VIOLET);
+				}
 				break;
 
 			case LOAD_GAME:
